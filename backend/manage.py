@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE","studysync.settings")
 from django.core.management import execute_from_command_line

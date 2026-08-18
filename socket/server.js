@@ -1,13 +1,9 @@
-import express from "express";
-import http from "http";
-import cors from "cors";
-import {Server} from "socket.io";
-const app=express();app.use(cors());app.get("/health",(q,s)=>s.json({status:"ok"}));
-const server=http.createServer(app);const io=new Server(server,{cors:{origin:"*",methods:["GET","POST"]}});
+import express from "express"; import http from "http"; import {Server} from "socket.io";
+const app=express(); app.get("/health",(q,s)=>s.json({status:"ok"}));
+const server=http.createServer(app); const io=new Server(server,{cors:{origin:"*"}});
 io.on("connection",socket=>{
- socket.on("room:join",({roomId})=>{socket.join(roomId);socket.to(roomId).emit("room:user_joined",{userId:socket.id})});
+ socket.on("room:join",({roomId,userId})=>{socket.join(roomId);socket.to(roomId).emit("presence:join",{userId})});
  socket.on("chat:message",m=>io.to(m.roomId).emit("chat:message",{...m,id:Date.now()}));
  socket.on("whiteboard:draw",d=>socket.to(d.roomId).emit("whiteboard:draw",d));
- socket.on("disconnect",()=>{});
 });
-server.listen(process.env.PORT||4000,()=>console.log("StudySync socket server running"));
+server.listen(process.env.PORT||4000,"0.0.0.0",()=>console.log("StudySync Socket.IO ready"));

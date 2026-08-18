@@ -1,4 +1,2 @@
 import React from "react";
-export default function QuizCard() {
-  return <section className="p-3" data-component="QuizCard"><h5>QuizCard</h5></section>;
-}
+export default function QuizCard({children}){return <div className="component component-quizcard">{children||"QuizCard"}</div>};

@@ -1,25 +1,13 @@
-# StudySync – Real-Time Remote Learning Platform
+# StudySync — One Deployment Docker Edition
 
-StudySync recreates the library-study-group experience for remote learners.
+React + Bootstrap + Django REST + Node Socket.IO + MongoDB architecture.
+The public application is served from ONE URL through Nginx.
 
-## Stack
-- Frontend: React, Bootstrap, CSS, JavaScript
-- Backend: Django REST Framework
-- Real-time: Socket.IO-compatible Node gateway
-- Database: MongoDB
-- Storage: AWS S3 abstraction
-- DevOps: Docker
+## Local
+docker compose up --build
+Open http://localhost:8080
 
-## Modules
-1. Authentication and study groups
-2. Resource repository
-3. Live chat
-4. Collaborative whiteboard
-5. Quizzes and leaderboard
-6. Tutor marketplace and booking
-7. Deployment and testing
-
-## Run
-See `docs/SETUP.md`.
-
-> This repository is an internship-ready architectural starter. Cloud credentials and production secrets are intentionally excluded.
+## Production
+Push this repository to GitHub, create one Docker Web Service on Render,
+expose port 8080, and configure MONGO_URI. The same URL serves React,
+/api/* and /socket.io/*.

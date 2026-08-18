@@ -1,6 +1,8 @@
 from django.http import JsonResponse
-def health(request): return JsonResponse({"service":"StudySync API","status":"ok"})
-def groups(request): return JsonResponse({"items":[],"module":"groups"})
-def quizzes(request): return JsonResponse({"items":[],"module":"quizzes"})
-def tutors(request): return JsonResponse({"items":[],"module":"tutors"})
-def bookings(request): return JsonResponse({"items":[],"module":"bookings"})
+def result(module): return JsonResponse({"service":"StudySync","module":module,"status":"ok","items":[]})
+def health(request): return result("health")
+def groups(request): return result("groups")
+def resources(request): return result("resources")
+def quizzes(request): return result("quizzes")
+def tutors(request): return result("tutors")
+def bookings(request): return result("bookings")

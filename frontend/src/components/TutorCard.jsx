@@ -1,4 +1,2 @@
 import React from "react";
-export default function TutorCard() {
-  return <section className="p-3" data-component="TutorCard"><h5>TutorCard</h5></section>;
-}
+export default function TutorCard({children}){return <div className="component component-tutorcard">{children||"TutorCard"}</div>};
