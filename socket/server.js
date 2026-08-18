@@ -6,4 +6,4 @@ io.on("connection",socket=>{
  socket.on("chat:message",m=>io.to(m.roomId).emit("chat:message",{...m,id:Date.now()}));
  socket.on("whiteboard:draw",d=>socket.to(d.roomId).emit("whiteboard:draw",d));
 });
-server.listen(process.env.SOCKET_PORT||4000,"0.0.0.0",()=>console.log("StudySync Socket.IO ready on 4000"));
+server.listen(4000,"0.0.0.0",()=>console.log("StudySync Socket.IO ready on 4000"));

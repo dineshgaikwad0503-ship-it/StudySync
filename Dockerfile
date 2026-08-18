@@ -14,6 +14,7 @@ FROM node:22-bookworm-slim
 WORKDIR /app
 RUN apt-get update && apt-get install -y nginx supervisor && rm -rf /var/lib/apt/lists/*
 COPY --from=py /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
+COPY --from=py /usr/local/bin/gunicorn /usr/local/bin/gunicorn
 COPY --from=frontend /build/dist /app/frontend/dist
 COPY backend /app/backend
 COPY socket /app/socket
