@@ -6,3 +6,4 @@ coverage/
 uploads/*
 !.gitkeep
 .DS_Store
+demo-data/large-synthetic-demo.ndjson
