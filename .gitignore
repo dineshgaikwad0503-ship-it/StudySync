@@ -7,3 +7,4 @@ uploads/*
 !.gitkeep
 .DS_Store
 demo-data/large-synthetic-demo.ndjson
+demo-data/large-synthetic-demo.ndjson
