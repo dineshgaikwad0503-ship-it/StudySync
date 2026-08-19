@@ -1,1 +1,0 @@
-{"name":"studysync","private":true,"version":"2.0.0","type":"module","scripts":{"dev":"vite","build":"vite build","preview":"vite preview"},"dependencies":{"@vitejs/plugin-react":"latest","bootstrap":"latest","bootstrap-icons":"latest","react":"latest","react-dom":"latest","react-router-dom":"latest","socket.io-client":"latest","vite":"latest"}}
