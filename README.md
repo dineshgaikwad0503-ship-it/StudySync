@@ -173,3 +173,4 @@ Client:
 - `npm run dev`
 - `npm run build`
 - `npm run preview`
+https://studysync-4-j8a7.onrender.com
