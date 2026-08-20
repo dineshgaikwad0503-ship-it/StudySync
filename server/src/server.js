@@ -5,7 +5,7 @@ const app = require('./app');
 const { connectDB } = require('./config/db');
 const { initSocket } = require('../../socket/socket');
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 // 👇 यह नया route यहाँ add करो
 app.get('/', (req, res) => {
